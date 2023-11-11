@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Reader</title>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            min-height: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing:border-box;
+           box-shadow: 0px 10px 20px 5px rgba(160, 248, 248, 0.7);
+            /* box-shadow: 0px 10px 20px 2px rgba(8, 7, 7, 0.1); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            /* display: none; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            /* justify-content: flex-start; */
+            /* cursor: pointer; */
+            /* float: inline-end; */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        #text{
+            font-size: 20px;
+            line-height: 2.5;
+            min-height: 100%;
+            min-width: 100%;
+            border: 0px solid;
+            font-family: 'Mukta';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- STORY TITLE -->
+        <h1>Ben’s story</h1>
+    </header>
+    <main>
+       <nav> <h1>Beauty of Nature</h1></nav>
+        <div id="text"></div>
+        <!-- <footer><button id="next-button">Next Chapter</button></footer> -->
+    </main>
+
+    <script>
+       
+        
+        const textElement = document.getElementById("text");
+        const text = `Once upon a time, in a small village nestled in the countryside, there lived a farmer named Ben. Ben was known for his hard work and dedication to his crops, but he often found himself feeling frustrated when things didn’t go as planned.
+
+One summer, a severe drought struck the village, causing Ben’s crops to wither and die. He felt defeated and angry, as his hard work seemed to have been in vain. Frustration consumed him, and he couldn’t see a way out of his predicament.
+
+One day, as Ben was walking through his barren fields, he noticed a group of children playing in a nearby stream. They were laughing and splashing around, seemingly unaffected by the drought. Curious, Ben approached them and asked how they could be so happy despite the difficult circumstances.
+
+One of the children, a young girl named Lily, smiled and said, “Mr. Ben, when life gives us lemons, we make lemonade!” She explained that instead of focusing on what they couldn’t control, they chose to find joy in the simple pleasures that were still available to them.
+
+Inspired by Lily’s words, Ben decided to shift his perspective. He started to appreciate the beauty of nature around him, even in its dried-up state. He spent more time with his family, cherishing their love and support. And he began to explore new ways to adapt to the drought, seeking advice from fellow farmers and experimenting with alternative crops.
+
+As Ben embraced this new mindset, he discovered a hidden resilience within himself. He found creative solutions to his farming challenges, and even though his harvest wasn’t as bountiful as before, he felt a deep sense of satisfaction and happiness.
+
+Word of Ben’s positive attitude spread throughout the village, and his neighbors began to see the value in looking beyond their frustrations. Together, they formed a supportive community, helping each other through tough times and celebrating even the smallest victories.
+
+And so, my friend, remember Ben’s story when frustration weighs you down. Look for the silver linings, find joy in the little things, and embrace the support of those around you. Sometimes, a shift in perspective can lead to happiness and fulfillment, even in the face of challenges. 🌻😊`;
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80);
+          }
+        }
+        type();
+        // if(type()){
+       
+        // }
+    </script>
+</body>
+</html>
